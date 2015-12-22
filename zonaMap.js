@@ -13,14 +13,13 @@
     var defaults = {
       textReset: 'All',
       imgSrc: '',
+      imgTransparent: '',
       width: 'auto',
       height: 'auto',
       eventClick: function(l,e){  },
       eventHover: function(l,e){  }
     };
     var settings = $.extend( {}, defaults, options );
-
-    imgTransparent = selector.attr('data-img-transparent');
 
     that.zonaMapObj = false;
 
@@ -36,7 +35,7 @@
               htmlInterface += '<img width="'+settings.width+'" height="'+settings.height+'" class="zonaMapCustomSvg zonaMap zonaMap_'+optData.value+'" src="'+optData.image+'">';
             }
           });
-          htmlInterface += '<img width="'+settings.width+'" height="'+settings.height+'" class="zonaMap_primary" src="'+imgTransparent+'" usemap="#'+zonaMapArea+'">';
+          htmlInterface += '<img width="'+settings.width+'" height="'+settings.height+'" class="zonaMap_primary" src="'+settings.imgTransparent+'" usemap="#'+zonaMapArea+'">';
           htmlInterface += '<img width="'+settings.width+'" height="'+settings.height+'" class="zonaMap_map" src="'+settings.imgSrc+'">';
 
           htmlInterface += '<map id="'+zonaMapArea+'" name="zonaMapMap">';
