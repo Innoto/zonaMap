@@ -38,7 +38,7 @@
           htmlInterface += '<img width="'+settings.width+'" height="'+settings.height+'" class="zonaMap_primary" src="'+settings.imgTransparent+'" usemap="#'+zonaMapArea+'">';
           htmlInterface += '<img width="'+settings.width+'" height="'+settings.height+'" class="zonaMap_map" src="'+settings.imgSrc+'">';
 
-          htmlInterface += '<map id="'+zonaMapArea+'" name="zonaMapMap">';
+          htmlInterface += '<map id="'+zonaMapArea+'" name="'+zonaMapArea+'">';
           $.each( dataOpts , function( index, optData ) {
             if(optData.coords){
               htmlInterface += '<area shape="poly" data-term="'+optData.value+'" coords="'+optData.coords+'" target=""  />';
