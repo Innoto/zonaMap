@@ -1,0 +1,62 @@
+.filterZonaMapContainer .filterZonaMap_openFilter {
+  border: 1px solid #000;
+  display: inline-block;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+  padding: 0px 15px;
+  text-align: center;
+  cursor: pointer;
+}
+.filterZonaMapContainer .filterZonaMap_openFilter svg {
+  width: 40px;
+  height: 40px;
+}
+.filterZonaMapContainer .filterZonaMap_openFilter svg path {
+  fill: blue !important;
+}
+.filterZonaMapContainer .filterZonaMap_opts {
+  position: absolute;
+  z-index: 2;
+  border: 1px solid #000;
+  display: none;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+}
+.filterZonaMapContainer .filterZonaMap_opts .zonaMap_primary {
+  position: absolute;
+  z-index: 2;
+}
+.filterZonaMapContainer .filterZonaMap_opts .zonaMap {
+  position: absolute;
+  z-index: 1;
+  display: none;
+}
+.filterZonaMapContainer .filterZonaMap_opts .zonaMap path {
+  fill: blue !important;
+}
+.filterZonaMapContainer .filterZonaMap_opts .zonaMap.selected {
+  display: block;
+}
+.filterZonaMapContainer .filterZonaMap_opts .zonaMap_title {
+  width: 100%;
+  text-align: center;
+  padding: 5px 20px;
+  height: 30px;
+  font-size: 18px;
+}
+.filterZonaMapContainer .filterZonaMap_opts .zonaMap_reset {
+  margin: 10px auto 40px;
+  max-width: 200px;
+  text-align: center;
+  padding: 5px 10px;
+  font-size: 18px;
+  color: white;
+  background-color: blue;
+  border: 1px solid black;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+  cursor: pointer;
+}
