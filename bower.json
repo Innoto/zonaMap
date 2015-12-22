@@ -1,0 +1,29 @@
+{
+  "name": "zonaMap",
+  "main": [
+    "zonaMap.js",
+    "zonaMap.css",
+    "zonaMap.less"
+  ],
+  "version": "0.0.1",
+  "homepage": "https://github.com/Innoto/zonaMap",
+  "authors": [
+    "Innoto"
+  ],
+  "description": "A mapped image Selector",
+  "keywords": [
+    "zonaMap",
+    "mapping image",
+    "mapped image Selector",
+    "select"
+  ],
+  "license": "GNU GPL3",
+  "dependencies": {},
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
