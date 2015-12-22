@@ -7,6 +7,7 @@
     var zonaMapObj = false;
     var zonaMapId;
     var zonaMapArea;
+    var imgTransparent;
     var dataOpts = [];
 
     var defaults = {
@@ -19,6 +20,8 @@
     };
     var settings = $.extend( {}, defaults, options );
 
+    imgTransparent = selector.attr('data-img-transparent');
+
     that.zonaMapObj = false;
 
     that.createInterface = function(){
@@ -30,10 +33,10 @@
         htmlInterface += '<div class="filterZonaMap_opts">';
           $.each( dataOpts , function( index, optData ) {
             if(optData.coords){
-              htmlInterface += '<img width="'+settings.width+'" height="'+settings.height+'" class="zonaMapCustomSvg zonaMap zonaMap_'+optData.value+'" src="/media/module/rextAppZona/img/'+optData.value+'.svg">';
+              htmlInterface += '<img width="'+settings.width+'" height="'+settings.height+'" class="zonaMapCustomSvg zonaMap zonaMap_'+optData.value+'" src="'+optData.image+'">';
             }
           });
-          htmlInterface += '<img width="'+settings.width+'" height="'+settings.height+'" class="zonaMap_primary" src="/media/module/rextAppZona/img/transparent_gal.png" usemap="#'+zonaMapArea+'">';
+          htmlInterface += '<img width="'+settings.width+'" height="'+settings.height+'" class="zonaMap_primary" src="'+imgTransparent+'" usemap="#'+zonaMapArea+'">';
           htmlInterface += '<img width="'+settings.width+'" height="'+settings.height+'" class="zonaMap_map" src="'+settings.imgSrc+'">';
 
           htmlInterface += '<map id="'+zonaMapArea+'" name="zonaMapMap">';
@@ -66,6 +69,7 @@
         var data = {
           name: $( this ).text(),
           coords: $( this ).attr('data-coords'),
+          image: $( this ).attr('data-img'),
           selected: $( this ).is( ":selected" ),
           value: $( this ).val()
         }
