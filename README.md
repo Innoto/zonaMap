@@ -5,7 +5,7 @@ A mapped image Selector
 
 Example:
 ```
-<select id="filter_gal_map" name="filter_gal_map" data-img-transparent="/media/module/rextAppZona/img/transparent.png">
+<select id="filter_gal_map" name="filter_gal_map">
   <option value="">Todas</option>
   <option
     value="baixominoVigo"
@@ -123,7 +123,8 @@ $(document).ready(function(){
   $('#filter_gal_map').zonaMap({
     width: 400,
     height: 500,
-    imgSrc: '/media/module/rextAppZona/img/gal.svg'
+    imgSrc: '/media/module/rextAppZona/img/gal.svg',
+    imgTransparent: '/media/module/rextAppZona/img/transparent.png'
   });
 });
 ```
