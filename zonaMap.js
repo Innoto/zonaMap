@@ -90,12 +90,12 @@
         }
       });
 
-      zonaMapObj.find('.filterZonaMap_openFilter').hide();
+      //zonaMapObj.find('.filterZonaMap_openFilter').hide();
       zonaMapObj.find('.filterZonaMap_opts').show();
 
     }
     that.closeFilterZonaMap = function(){
-      zonaMapObj.find('.filterZonaMap_openFilter').show();
+      //zonaMapObj.find('.filterZonaMap_openFilter').show();
       zonaMapObj.find('.filterZonaMap_opts').hide();
     }
     that.reloadZonaMap = function( ){

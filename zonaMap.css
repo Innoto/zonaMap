@@ -17,12 +17,15 @@
 }
 .filterZonaMapContainer .filterZonaMap_opts {
   position: absolute;
+  top:0;
   z-index: 2;
   border: 1px solid #000;
   display: none;
   -webkit-border-radius: 25px;
   -moz-border-radius: 25px;
   border-radius: 25px;
+  background-color: rgba( 255, 255, 255, 0.9);
+  padding: 10px;
 }
 .filterZonaMapContainer .filterZonaMap_opts .zonaMap_primary {
   position: absolute;
