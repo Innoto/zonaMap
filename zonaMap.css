@@ -4,7 +4,7 @@
   -webkit-border-radius: 25px;
   -moz-border-radius: 25px;
   border-radius: 25px;
-  padding: 0px 15px;
+  padding: 2px 15px;
   text-align: center;
   cursor: pointer;
 }
@@ -22,10 +22,17 @@
   border: 1px solid #000;
   display: none;
   -webkit-border-radius: 25px;
+  -webkit-border-bottom-right-radius: 10px;
+  -webkit-border-bottom-left-radius: 10px;
   -moz-border-radius: 25px;
+  -moz-border-radius-bottomright: 10px;
+  -moz-border-radius-bottomleft: 10px;
   border-radius: 25px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+
   background-color: rgba( 255, 255, 255, 0.9);
-  padding: 10px;
+  padding: 20px;
 }
 .filterZonaMapContainer .filterZonaMap_opts .zonaMap_primary {
   position: absolute;
