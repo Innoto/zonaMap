@@ -28,7 +28,7 @@
       var htmlInterface = '';
 
       htmlInterface += '<div id="'+zonaMapId+'" class="filterZonaMapContainer">';
-        htmlInterface += '<div class="filterZonaMap_openFilter"><img width="40" height="40" class="zonaMapCustomSvg" src="'+settings.imgSrc+'"></div>';
+        htmlInterface += '<div class="filterZonaMap_openFilter"><img width="40" height="40" class="zonaMapCustomSvg" src="'+settings.imgSrc+'"><div class="filterZonaMap_selected"></div></div>';
         htmlInterface += '<div class="filterZonaMap_opts">';
           $.each( dataOpts , function( index, optData ) {
             if(optData.coords){
@@ -86,7 +86,7 @@
       $.each( dataOpts , function( index, optData ) {
         if(optData.selected){
           zonaMapObj.find('.zonaMap_'+optData.value).show();
-          zonaMapObj.find('.zonaMap_title').html(optData.value);
+          zonaMapObj.find('.zonaMap_title').html(optData.name);
         }
       });
 
@@ -154,7 +154,8 @@
 
 
     that.zonaMapMouseOver = function(idNameTerm){
-      zonaMapObj.find('.zonaMap_title').html(idNameTerm);
+      var zonaElem = that.getZonaMapOpt(idNameTerm);
+      zonaMapObj.find('.zonaMap_title').html(zonaElem.name);
       zonaMapObj.find('.zonaMap_'+idNameTerm).show();
       settings.eventHover();
     }
@@ -172,7 +173,7 @@
       $.each( dataOpts , function( index, optData ) {
         if(optData.selected){
           zonaMapObj.find('.zonaMap_'+optData.value).show();
-          zonaMapObj.find('.zonaMap_title').html(optData.value);
+          zonaMapObj.find('.zonaMap_title').html(optData.text);
         }
       });
     }
