@@ -1,4 +1,5 @@
 .filterZonaMapContainer .filterZonaMap_openFilter {
+  background-color: white;
   border: 1px solid #000;
   display: inline-block;
   -webkit-border-radius: 25px;
@@ -8,6 +9,15 @@
   text-align: center;
   cursor: pointer;
 }
+.filterZonaMapContainer .filterZonaMap_openFilter .zonaMapCustomSvg,
+.filterZonaMapContainer .filterZonaMap_openFilter .filterZonaMap_selected,
+.filterZonaMapContainer .filterZonaMap_openFilter .filterZonaMap_arrow {
+  float: left;
+  margin: 2px;
+  padding: 1px;
+  line-height: 30px;
+  vertical-align: middle;
+}
 .filterZonaMapContainer .filterZonaMap_openFilter svg {
   width: 40px;
   height: 40px;
@@ -16,8 +26,10 @@
   fill: blue !important;
 }
 .filterZonaMapContainer .filterZonaMap_opts {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
   position: absolute;
-  top:0;
+  top: 0;
   z-index: 2;
   border: 1px solid #000;
   display: none;
@@ -30,9 +42,6 @@
   border-radius: 25px;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
-
-  background-color: rgba( 255, 255, 255, 0.9);
-  padding: 20px;
 }
 .filterZonaMapContainer .filterZonaMap_opts .zonaMap_primary {
   position: absolute;
@@ -64,7 +73,6 @@
   font-size: 18px;
   color: white;
   background-color: blue;
-  border: 1px solid black;
   -webkit-border-radius: 25px;
   -moz-border-radius: 25px;
   border-radius: 25px;

@@ -14,6 +14,7 @@
       textReset: 'All',
       imgSrc: '',
       imgTransparent: '',
+      htmlIconArrow: '',
       width: 'auto',
       height: 'auto',
       eventClick: function(l,e){  },
@@ -28,7 +29,7 @@
       var htmlInterface = '';
 
       htmlInterface += '<div id="'+zonaMapId+'" class="filterZonaMapContainer">';
-        htmlInterface += '<div class="filterZonaMap_openFilter"><img width="40" height="40" class="zonaMapCustomSvg" src="'+settings.imgSrc+'"><div class="filterZonaMap_selected"></div></div>';
+        htmlInterface += '<div class="filterZonaMap_openFilter"><img width="40" height="40" class="zonaMapCustomSvg" src="'+settings.imgSrc+'"><div class="filterZonaMap_selected"></div><div class="filterZonaMap_arrow">'+settings.htmlIconArrow+'</div></div>';
         htmlInterface += '<div class="filterZonaMap_opts">';
           $.each( dataOpts , function( index, optData ) {
             if(optData.coords){
@@ -81,6 +82,11 @@
         return e.value == value;
       })[0];
     }
+    that.getZonaMapOptSelected = function(){
+      return $.grep(dataOpts, function(e){
+        return e.selected == true;
+      })[0];
+    }
     that.openFilterZonaMap = function(){
       zonaMapObj.find('.zonaMap').hide();
       $.each( dataOpts , function( index, optData ) {
@@ -92,10 +98,23 @@
 
       //zonaMapObj.find('.filterZonaMap_openFilter').hide();
       zonaMapObj.find('.filterZonaMap_opts').show();
+      $(document).mouseup(function (e){
+          var container = zonaMapObj.find('.filterZonaMap_opts');
+          if (!container.is(e.target) // if the target of the click isn't the container...
+              && container.has(e.target).length === 0) // ... nor a descendant of the container
+          {
+              container.hide();
+          }
+      });
 
     }
     that.closeFilterZonaMap = function(){
-      //zonaMapObj.find('.filterZonaMap_openFilter').show();
+      var zonaElem = that.getZonaMapOptSelected();
+      if(zonaElem.value != ""){
+        zonaMapObj.find('.filterZonaMap_selected').html(zonaElem.name);
+      }else{
+        zonaMapObj.find('.filterZonaMap_selected').html(" ");
+      }
       zonaMapObj.find('.filterZonaMap_opts').hide();
     }
     that.reloadZonaMap = function( ){
@@ -170,12 +189,13 @@
 
     that.zonaMapMouseOut = function(){
       zonaMapObj.find('.zonaMap').hide();
-      $.each( dataOpts , function( index, optData ) {
-        if(optData.selected){
-          zonaMapObj.find('.zonaMap_'+optData.value).show();
-          zonaMapObj.find('.zonaMap_title').html(optData.text);
-        }
-      });
+      var zonaElem = that.getZonaMapOptSelected();
+      if(zonaElem.value != ""){
+        zonaMapObj.find('.zonaMap_'+zonaElem.value).show();
+        zonaMapObj.find('.zonaMap_title').html(zonaElem.name);
+      }else{
+        zonaMapObj.find('.zonaMap_title').html('');
+      }
     }
 
 
