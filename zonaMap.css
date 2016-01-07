@@ -26,7 +26,7 @@
   fill: blue !important;
 }
 .filterZonaMapContainer .filterZonaMap_opts {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: #ffffff;
   padding: 20px;
   position: absolute;
   top: 0;
@@ -42,6 +42,9 @@
   border-radius: 25px;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
+}
+.filterZonaMapContainer .filterZonaMap_opts area {
+  cursor: pointer;
 }
 .filterZonaMapContainer .filterZonaMap_opts .zonaMap_primary {
   position: absolute;
@@ -66,7 +69,7 @@
   font-size: 18px;
 }
 .filterZonaMapContainer .filterZonaMap_opts .zonaMap_reset {
-  margin: 10px auto 40px;
+  margin: 20px auto 0px;
   max-width: 200px;
   text-align: center;
   padding: 5px 10px;
