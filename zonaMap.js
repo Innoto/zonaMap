@@ -182,6 +182,7 @@
     that.zonaMapClick = function(idNameTerm){
       selector.find("option:selected").prop("selected", false);
       selector.find('option[value="'+idNameTerm+'"]').prop("selected", true);
+      selector.trigger("change");
       that.reloadZonaMap();
       settings.eventClick();
       that.closeFilterZonaMap();
