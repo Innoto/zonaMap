@@ -136,6 +136,7 @@
       });
       zonaMapObj.find('.zonaMap_reset').on( "click", function (){
         selector.find("option:selected").prop("selected", false);
+        selector.trigger("change");
         that.reloadZonaMap();
         that.closeFilterZonaMap();
       });
