@@ -1,0 +1,14 @@
+{
+  "name": "zonamap",
+  "version": "0.0.1",
+  "description": "A mapped image Selector",
+  "main": [ "zonaMap.js", "zonaMap.css", "zonaMap.less" ],
+  "homepage": "https://github.com/Innoto/zonaMap",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Innoto/zonaMap.git"
+  },
+  "author": "Innoto",
+  "license": "GPL-3.0-only",
+  "keywords": [ "zonaMap", "mapping image", "mapped image Selector", "select" ]
+}
